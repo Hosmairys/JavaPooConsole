@@ -176,12 +176,18 @@ public class Main {
                                         System.out.println("Razão social: " + cadaPj.razaoSocial);
                                         System.out.println("CNPJ: " + cadaPj.cnpj);
                                         System.out.println("Data de criação: " + cadaPj.dataCriacao.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                                        System.out.println("Imposto a ser pago: " + metodoPj.CalcularImpostoPj(cadaPj.rendimento));
+                                        System.out.println("Endereço: " + cadaPj.endereco.logradouro + "-" + cadaPj.endereco.numero);
+                                        System.out.println("Comercial: " + (cadaPj.endereco.endComercial?"Sim":"Não" ));
+                                        System.out.println();
+                                        System.out.println("Aperte ENTER para continuar");
+                                        leitor.nextLine();
                                     }
                                 }
                                 break;
 
                             case "0":
-                                System.out.println("Volta");
+                                System.out.println("Sair do sistema...");
                                 break;
 
                             default:
@@ -194,11 +200,11 @@ public class Main {
                     break;
 
                 case "0":
-                    System.out.println("case 0");
+                    System.out.println("Saindo do sistema...");
                     break;
 
                 default:
-                    System.out.println("default");
+                    System.out.println("Opção inválida");
                     break;
             }
 
